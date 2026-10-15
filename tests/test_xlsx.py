@@ -193,3 +193,22 @@ async def test_large_integers_shown_in_full(ds):
     assert ws["B2"].value == -12345678901 and ws["B2"].number_format == "0"
     assert ws["C2"].number_format == "General"
     assert ws["D2"].number_format == "General"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("path", [
+    # Bakom proxy som inte tar bort prefixet ingår base_url i request.path
+    "/prefix/test/personer.xlsx?id__gt=2000",
+    "/test/personer.xlsx?id__gt=2000",
+])
+async def test_table_with_base_url(tmp_path, path):
+    """Regression: base_url lades till två gånger vid de interna .json-anropen."""
+    db = str(tmp_path / "test.db")
+    conn = sqlite3.connect(db)
+    conn.execute("create table personer (id integer primary key)")
+    conn.executemany("insert into personer values (?)", [(i,) for i in range(1, 2501)])
+    conn.commit()
+    ds = Datasette([db], settings={"max_returned_rows": 1000, "base_url": "/prefix/"})
+    resp = await ds.client.request("GET", path, avoid_path_rewrites=True)
+    wb, ws = sheet(resp)
+    assert ws.max_row == 501
