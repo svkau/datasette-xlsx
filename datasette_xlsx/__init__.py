@@ -297,6 +297,11 @@ def _forward_auth(request):
 async def _table_rows(datasette, request, columns, writer):
     """Följ Datasettes egen keyset-paginering via interna .json-anrop."""
     path = request.path[: -len(".xlsx")] + ".json"
+    # datasette.client lägger till base_url själv. Bakom en proxy som inte
+    # tar bort prefixet ingår det redan i request.path och skulle då dubblas.
+    base_url = datasette.setting("base_url")
+    if base_url != "/" and path.startswith(base_url):
+        path = "/" + path[len(base_url):]
     args = [
         (k, v)
         for k, v in urllib.parse.parse_qsl(request.query_string, keep_blank_values=True)
