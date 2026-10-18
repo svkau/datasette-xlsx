@@ -4,10 +4,33 @@ version = "0.2.1"
 description = "Exportera tabeller och frågeresultat från Datasette som Excel (.xlsx)"
 readme = "README.md"
 requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Svenska kyrkans arkiv i Uppsala" },
+]
+keywords = ["datasette", "datasette-plugin", "excel", "xlsx", "export"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Datasette",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: Swedish",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Database",
+    "Topic :: Office/Business :: Office Suites",
+]
 dependencies = [
     "datasette>=0.64",
     "openpyxl>=3.1",
 ]
+
+[project.urls]
+Homepage = "https://github.com/svkau/datasette-xlsx"
+Issues = "https://github.com/svkau/datasette-xlsx/issues"
+Changelog = "https://github.com/svkau/datasette-xlsx/releases"
 
 [project.optional-dependencies]
 test = ["pytest", "pytest-asyncio"]
@@ -16,7 +39,8 @@ test = ["pytest", "pytest-asyncio"]
 xlsx = "datasette_xlsx"
 
 [build-system]
-requires = ["setuptools"]
+# setuptools 77 krävs för SPDX-uttryck i `license` (PEP 639).
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
