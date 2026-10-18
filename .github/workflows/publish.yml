@@ -5,7 +5,20 @@ on:
     types: [published]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: uv run --locked --extra test pytest
+
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +35,7 @@ jobs:
   publish-testpypi:
     needs: build
     runs-on: ubuntu-latest
-    environment: testpypi
+    environment: pypi_test
     permissions:
       id-token: write
     steps:
