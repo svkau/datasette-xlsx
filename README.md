@@ -1,5 +1,7 @@
 # datasette-xlsx
 
+[![PyPI](https://img.shields.io/pypi/v/datasette-xlsx.svg)](https://pypi.org/project/datasette-xlsx/)
+
 Plugin till [Datasette](https://datasette.io/) som exporterar tabeller, vyer
 och frågeresultat som Excel-filer (`.xlsx`).
 
