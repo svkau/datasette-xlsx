@@ -9,17 +9,23 @@ vy-, fråge- och radsidor.
 
 ## Installation
 
-Pluginet finns inte på PyPI. Installera det från GitHub i samma miljö som
-Datasette körs i:
+Installera pluginet från [PyPI](https://pypi.org/project/datasette-xlsx/) i
+samma miljö som Datasette körs i:
 
 ```bash
-datasette install git+https://github.com/svkau/datasette-xlsx
+datasette install datasette-xlsx
 ```
 
 eller, i ett projekt som hanteras med uv:
 
 ```bash
-uv add git+https://github.com/svkau/datasette-xlsx
+uv add datasette-xlsx
+```
+
+Den senaste utvecklingsversionen kan installeras direkt från GitHub:
+
+```bash
+datasette install git+https://github.com/svkau/datasette-xlsx
 ```
 
 Kontrollera att pluginet är laddat med `datasette plugins`.
@@ -116,6 +122,26 @@ Testa manuellt mot en lokal databas, som bör ligga utanför repot:
 uv run datasette ../datasette-testdata/exempel.db
 ```
 
+### Publicera en ny version
+
+Paketet publiceras på PyPI av GitHub-arbetsflödet
+[`publish.yml`](https://github.com/svkau/datasette-xlsx/blob/main/.github/workflows/publish.yml) med Trusted Publishing, så inga
+API-nycklar behövs.
+
+1. Höj `version` i `pyproject.toml` och committa.
+2. Skapa en release på GitHub med taggen `v<version>`, t.ex. `v0.2.2`.
+3. Arbetsflödet bygger paketet, laddar upp det till TestPyPI och därefter till
+   PyPI. Miljöerna `testpypi` och `pypi` på GitHub styr vem som får godkänna
+   publiceringen.
+
+En version kan bara laddas upp en gång till PyPI. Kontrollera bygget lokalt
+innan releasen skapas:
+
+```bash
+uv build
+uvx twine check dist/*
+```
+
 ## Licens
 
-MIT, se [LICENSE](LICENSE).
+MIT, se [LICENSE](https://github.com/svkau/datasette-xlsx/blob/main/LICENSE).
