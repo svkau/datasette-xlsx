@@ -129,7 +129,7 @@ Paketet publiceras på PyPI av GitHub-arbetsflödet
 API-nycklar behövs.
 
 1. Höj `version` i `pyproject.toml` och committa.
-2. Skapa en release på GitHub med taggen `v<version>`, t.ex. `v0.2.2`.
+2. Skapa en release på GitHub med taggen `v<version>`, t.ex. `v0.2.3`.
 3. Arbetsflödet bygger paketet, laddar upp det till TestPyPI och därefter till
    PyPI. Miljöerna `testpypi` och `pypi` på GitHub styr vem som får godkänna
    publiceringen.
