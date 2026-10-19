@@ -9,6 +9,8 @@ Pluginet registrerar filändelsen `.xlsx` på samma sätt som Datasettes inbyggd
 `.json`. Därför dyker en länk till Excel-exporten upp automatiskt på tabell-,
 vy-, fråge- och radsidor.
 
+Det finns också en enkel [demo](https://demo.apps.vitalibus.se/).
+
 ## Installation
 
 Installera pluginet från [PyPI](https://pypi.org/project/datasette-xlsx/) i
