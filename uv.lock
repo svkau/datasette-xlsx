@@ -311,6 +311,18 @@ wheels = [
 ]
 
 [[package]]
+name = "click-default-group-wheel"
+version = "1.2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "click-default-group" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/97/15/f6bb054abe77d08da4694a0af0c11c104c2224bd8b0286345f2023aa7bd3/click-default-group-wheel-1.2.3.tar.gz", hash = "sha256:1873fc3496669ef2492c31f4e512d87d93af26148eb383ebdf1b2b9971072519", size = 1168, upload-time = "2023-09-06T02:56:04.24Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0e/9e/ba83ebc20aa74cd4030a41fa2a9c14132d522d859b09ba1f54fbacc7f5a4/click_default_group_wheel-1.2.3-py3-none-any.whl", hash = "sha256:2d00a21d437f23f6f2f5f6609c649caa72d4227c18a96ab250679f3a6a43af6e", size = 1274, upload-time = "2023-09-06T02:56:03.172Z" },
+]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -321,7 +333,7 @@ wheels = [
 
 [[package]]
 name = "datasette"
-version = "0.65.4"
+version = "0.64.2"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version < '3.10'",
@@ -331,26 +343,21 @@ dependencies = [
     { name = "asgi-csrf" },
     { name = "asgiref", version = "3.11.1", source = { registry = "https://pypi.org/simple" } },
     { name = "click", version = "8.1.8", source = { registry = "https://pypi.org/simple" } },
-    { name = "click-default-group" },
-    { name = "flexcache" },
-    { name = "flexparser" },
+    { name = "click-default-group-wheel" },
     { name = "httpx", version = "0.20.0", source = { registry = "https://pypi.org/simple" } },
     { name = "hupper" },
     { name = "itsdangerous" },
     { name = "janus" },
     { name = "jinja2" },
     { name = "mergedeep" },
-    { name = "pip", version = "26.0.1", source = { registry = "https://pypi.org/simple" } },
-    { name = "platformdirs", version = "4.4.0", source = { registry = "https://pypi.org/simple" } },
+    { name = "pint" },
     { name = "pluggy" },
     { name = "pyyaml" },
-    { name = "setuptools", version = "82.0.1", source = { registry = "https://pypi.org/simple" } },
-    { name = "typing-extensions" },
     { name = "uvicorn", version = "0.39.0", source = { registry = "https://pypi.org/simple" } },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/08/31/128dd63469844ee00fba7097ed778696460bb48db8943a8749f4be73258c/datasette-0.65.4.tar.gz", hash = "sha256:6b08f8aeb8f307262372b1cbb6e8e50cc350273f250af64393156b10c5bc0528", size = 415689, upload-time = "2026-09-11T00:10:26.328Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/63/57/255eec3f6e51f8662c758df7c58b8456596a3919369dd543b5445321a8b3/datasette-0.64.2.tar.gz", hash = "sha256:e9e16edbd3af2e11a2f251964fd8d9b7f9e4c4189790bc6c23f0fafa8ee458fc", size = 211035, upload-time = "2023-03-08T20:53:09.196Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c5/d4/f2860ef7295d8368246550bf8785275cb2f42cdb753fc5c83979b420b6c8/datasette-0.65.4-py3-none-any.whl", hash = "sha256:3be08d603338f2e2cc4e608f8aafa7a0880c25d6958cab4469379c61c2297e82", size = 399473, upload-time = "2026-09-11T00:10:24.343Z" },
+    { url = "https://files.pythonhosted.org/packages/54/6a/d1fb34da082e56bbca45b9d27fb922862e4e5fe24ebac3c52958391b23b1/datasette-0.64.2-py3-none-any.whl", hash = "sha256:527fc40741d8d0d6c09e660f1151d10ff8fdc42aebaaff4a6be4813e221eb4b2", size = 232292, upload-time = "2023-03-08T20:53:07.341Z" },
 ]
 
 [[package]]
@@ -374,11 +381,11 @@ dependencies = [
     { name = "janus" },
     { name = "jinja2" },
     { name = "mergedeep" },
-    { name = "pip", version = "26.2.1", source = { registry = "https://pypi.org/simple" } },
+    { name = "pip" },
     { name = "platformdirs", version = "4.12.2", source = { registry = "https://pypi.org/simple" } },
     { name = "pluggy" },
     { name = "pyyaml" },
-    { name = "setuptools", version = "84.0.0", source = { registry = "https://pypi.org/simple" } },
+    { name = "setuptools" },
     { name = "typing-extensions" },
     { name = "uvicorn", version = "0.54.0", source = { registry = "https://pypi.org/simple" } },
 ]
@@ -392,7 +399,7 @@ name = "datasette-xlsx"
 version = "0.2.2"
 source = { editable = "." }
 dependencies = [
-    { name = "datasette", version = "0.65.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "datasette", version = "0.64.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "datasette", version = "0.65.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "openpyxl" },
 ]
@@ -813,27 +820,27 @@ wheels = [
 ]
 
 [[package]]
-name = "pip"
-version = "26.0.1"
+name = "pint"
+version = "0.24.4"
 source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.10'",
+dependencies = [
+    { name = "flexcache" },
+    { name = "flexparser" },
+    { name = "platformdirs", version = "4.4.0", source = { registry = "https://pypi.org/simple" } },
+    { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/48/83/0d7d4e9efe3344b8e2fe25d93be44f64b65364d3c8d7bc6dc90198d5422e/pip-26.0.1.tar.gz", hash = "sha256:c4037d8a277c89b320abe636d59f91e6d0922d08a05b60e85e53b296613346d8", size = 1812747, upload-time = "2026-02-05T02:20:18.702Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/20/bb/52b15ddf7b7706ed591134a895dbf6e41c8348171fb635e655e0a4bbb0ea/pint-0.24.4.tar.gz", hash = "sha256:35275439b574837a6cd3020a5a4a73645eb125ce4152a73a2f126bf164b91b80", size = 342225, upload-time = "2024-11-07T16:29:46.061Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/de/f0/c81e05b613866b76d2d1066490adf1a3dbc4ee9d9c839961c3fc8a6997af/pip-26.0.1-py3-none-any.whl", hash = "sha256:bdb1b08f4274833d62c1aa29e20907365a2ceb950410df15fc9521bad440122b", size = 1787723, upload-time = "2026-02-05T02:20:16.416Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/16/bd2f5904557265882108dc2e04f18abc05ab0c2b7082ae9430091daf1d5c/Pint-0.24.4-py3-none-any.whl", hash = "sha256:aa54926c8772159fcf65f82cc0d34de6768c151b32ad1deb0331291c38fe7659", size = 302029, upload-time = "2024-11-07T16:29:43.976Z" },
 ]
 
 [[package]]
 name = "pip"
-version = "26.2.1"
+version = "26.2"
 source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version >= '3.10'",
-]
-sdist = { url = "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz", hash = "sha256:f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f", size = 1848877, upload-time = "2026-08-04T22:51:14.148Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/db/96/e6f8e9d9d7b9cc4457092712a7e919c3186aa2c2fa9ffed2c5d29cc947e8/pip-26.2.tar.gz", hash = "sha256:2d8542afcc84cdd8e846c2b36b2861fad1da376dd98f8e7113e9108a3c331690", size = 1848845, upload-time = "2026-07-29T21:57:56.407Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f3/6e/1736e5b4ae2b778ef2f81c47d797de9f891d4d8acb047a24ca37a60294dd/pip-26.2.1-py3-none-any.whl", hash = "sha256:71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e", size = 1816632, upload-time = "2026-08-04T22:51:12.472Z" },
+    { url = "https://files.pythonhosted.org/packages/62/36/a3aed958d60531cb442b7ab4596cda7b3621cfb916f8ae1d6769795c7dc1/pip-26.2-py3-none-any.whl", hash = "sha256:931c303696af6fa3417112103b1cad26890e5a07eccb5b99783700e33f2b8aad", size = 1816475, upload-time = "2026-07-29T21:57:54.763Z" },
 ]
 
 [[package]]
@@ -1067,23 +1074,8 @@ idna2008 = [
 
 [[package]]
 name = "setuptools"
-version = "82.0.1"
-source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.10'",
-]
-sdist = { url = "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz", hash = "sha256:7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9", size = 1152316, upload-time = "2026-03-09T12:47:17.221Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/9d/76/f789f7a86709c6b087c5a2f52f911838cad707cc613162401badc665acfe/setuptools-82.0.1-py3-none-any.whl", hash = "sha256:a59e362652f08dcd477c78bb6e7bd9d80a7995bc73ce773050228a348ce2e5bb", size = 1006223, upload-time = "2026-03-09T12:47:15.026Z" },
-]
-
-[[package]]
-name = "setuptools"
 version = "84.0.0"
 source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version >= '3.10'",
-]
 sdist = { url = "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz", hash = "sha256:f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73", size = 1168449, upload-time = "2026-08-08T18:27:58.365Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/95/9c/c510029fc6ef33a6275cd2c5d3cecd6613dfd6aa401d57c54f1c18852ccf/setuptools-84.0.0-py3-none-any.whl", hash = "sha256:51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670", size = 818216, upload-time = "2026-08-08T18:27:56.719Z" },
